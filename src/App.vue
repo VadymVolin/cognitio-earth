@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/cognitio-earth/">Home</RouterLink>
+        <RouterLink to="/cognitio-earth/about">About</RouterLink>
       </nav>
     </div>
   </header>

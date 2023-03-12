@@ -1,9 +1,9 @@
 <template>
-    <main id="planet-component">
+    <div id="planet-component">
         <div id="circlr">
             <img v-for="item in data" :src="item.src" :alt="item.src" />
         </div>
-    </main>
+    </div>
 </template>
 
 <script>
@@ -57,9 +57,9 @@ export default {
     beforeCreate() {
     },
     created() {
+        this.fetchData()
     },
     beforeMount() {
-        this.fetchData()
     },
     mounted() {
 
@@ -100,38 +100,85 @@ export default {
     computed: {
     },
 }
-
-
-// const img = document.createElement("img")
-// img.src = "https://picsum.photos/200/301"
-// document.body.appendChild(img)
-
-// window.onload = function () {
-//     let el = document.getElementById('circlr')
-//     circlr(el)
-//         .scroll(true)
-//         .cycle(true)
-//         .on('show', n => {
-//         })
-// }
-
 </script>
 
 <style scoped>
+@media (min-width: 1024px) {
+    #planet-component {
+        justify-content: end;
+    }
+
+    #circlr {
+        width: 800px;
+        height: 800px;
+        max-width: 800px;
+        max-height: 800px;
+    }
+}
+
+@media (max-width: 1023px) {
+    #planet-component {
+        justify-content: center;
+    }
+
+    #circlr {
+        width: 700px;
+        height: 700px;
+        max-width: 700px;
+        max-height: 700px;
+    }
+}
+
+@media (max-width: 762px) {
+    #circlr {
+        width: 575px;
+        height: 575px;
+        max-width: 575px;
+        max-height: 575px;
+    }
+}
+
+@media (max-width: 575px) {
+    #circlr {
+        width: 375px;
+        height: 375px;
+        max-width: 375px;
+        max-height: 375px;
+    }
+}
+
+@media (max-width: 375px) {
+    #circlr {
+        width: 340px;
+        height: 340px;
+        max-width: 340px;
+        max-height: 340px;
+    }
+}
+
+@media (max-width: 320px) {
+    #circlr {
+        width: 300px;
+        height: 300px;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+#planet-component {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
 #circlr {
     cursor: move;
-    margin: 0 auto;
-    min-height: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    max-height: 300px;
-    width: 300px;
-    height: 300px;
+    min-height: 240px;
+    min-width: 240px;
     position: relative;
 }
 
 #circlr img {
-    max-width: 300px;
-    max-height: 300px;
+    width: 100%;
 }
 </style>
