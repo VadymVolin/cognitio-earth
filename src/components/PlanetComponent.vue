@@ -79,16 +79,16 @@ export default {
             e.preventDefault()
             crclr.play()
         }, false)
+        el.addEventListener('mouseup', function (e) {
+            e.preventDefault()
+            crclr.play()
+        }, false)
         let timeoutId = -1
         el.addEventListener('wheel', function (e) {
-            console.log("wheel");
             e.preventDefault()
-            console.log("prev: ", timeoutId)
             clearTimeout(timeoutId)
             timeoutId = setTimeout(() => {
-                console.log("new: ", timeoutId)
                 crclr.play()
-                console.log("hey...I'm 2 seconds in, play")
             }, 1000)
         }, false)
         crclr.play()
