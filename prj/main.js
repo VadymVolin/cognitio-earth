@@ -12,8 +12,8 @@ const app = createApp({
       console.log("count: ", this.count)
     },
     preloadImage(url) {
-      var img = new Image();
-      img.src = url;
+      var img = new Image()
+      img.src = url
     }
   }
 })
